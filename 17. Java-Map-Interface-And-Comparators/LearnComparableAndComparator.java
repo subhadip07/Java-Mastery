@@ -1,5 +1,14 @@
 import java.util.*;
 
+class MyCustomComparator implements Comparator<Animal>
+{
+    @Override
+    public int compare(Animal o1, Animal o2)
+    {
+        return Integer.compare(o1.weight, o2.weight);
+    }
+}
+
 public class LearnComparableAndComparator 
 {
     public static void main(String[] args) 
@@ -18,14 +27,10 @@ public class LearnComparableAndComparator
 
         System.out.println(dogs);
 
-        Collections.sort(dogs, new Comparator<Animal>())
-        {
-            @Override
-            public int compare(Animal o1, Animal o2)
-            {
-                return 0;
-            }
-        }
+        // Collections.sort(dogs, new MyCustomComparator());
+        Collections.sort(dogs, (o1, o2) -> {
+            return o1.name.compareTo(o2.name);
+        });
 
         System.out.println(dogs);
     }    
