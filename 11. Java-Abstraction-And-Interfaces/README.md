@@ -52,12 +52,16 @@ interface Line
 {
   -
 }
-
-interface Polygon{
+</code>
+<code>
+interface Polygon
+{
   -
 }
-
-class Rectangle implements Line, Polygon{
+</code>
+<code>
+class Rectangle implements Line, Polygon
+{
   -
 }
 </code>
